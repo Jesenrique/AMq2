@@ -145,6 +145,6 @@ class FeatureEngineeringPipeline(object):
 
   
 if __name__ == "__main__":
-    FeatureEngineeringPipeline(input_path_test = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\data\\Test_BigMart.csv',
-                               input_path_train = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\data\\Train_BigMart.csv',
-                               output_path = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\data\\preprocessed_data.csv').run()
+    FeatureEngineeringPipeline(input_path_test = './Test_BigMart.csv',
+                               input_path_train = './Train_BigMart.csv',
+                               output_path = './preprocessed_data.csv').run()

@@ -137,3 +137,140 @@
 2023-06-14 21:10:26 - log - INFO - prediction made successfully
 2023-06-14 21:10:26 - log - INFO - prediction was saved successfully
 2023-06-14 21:10:26 - log - INFO - SUCCESS: predict.py finished successfully
+2023-06-14 22:08:13 - log - INFO - SUCCESS: feauture engineering has started
+2023-06-14 22:08:13 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:08:13 - log - INFO - SUCCESS: data test was loaded successfully
+2023-06-14 22:08:13 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:08:16 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:08:16 - log - INFO - SUCCESS: data was transformed
+2023-06-14 22:08:16 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:08:16 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:08:18 - log - INFO - SUCCESS: The training of the linear regression model has started
+2023-06-14 22:08:18 - log - INFO - SUCCESS: data was loaded successfully
+2023-06-14 22:08:18 - log - INFO - The data was divided in test and train sets
+2023-06-14 22:08:18 - log - INFO - The model was trained
+2023-06-14 22:08:18 - log - INFO - The train metrics of the model are: RMSE: 1169.3505464496527-R2:0.5284213437179959
+2023-06-14 22:08:18 - log - INFO - The test metrics of the model are: RMSE: 1146.6648971839618-R2:0.552593049589098
+2023-06-14 22:08:18 - log - INFO - SUCCESS: The model has been saved successfully
+2023-06-14 22:08:18 - log - INFO - SUCCESS: train.py finished successfully
+2023-06-14 22:08:19 - log - INFO - SUCCESS: feauture engineering inference has started
+2023-06-14 22:08:19 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:08:19 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:08:19 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:08:19 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:08:19 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:08:20 - log - INFO - prediction proccess has started
+2023-06-14 22:08:20 - log - INFO - the data was loaded successfully
+2023-06-14 22:08:20 - log - INFO - the model.pkl has been loaded successfully
+2023-06-14 22:08:20 - log - INFO - prediction made successfully
+2023-06-14 22:08:20 - log - INFO - prediction was saved successfully
+2023-06-14 22:08:21 - log - INFO - SUCCESS: predict.py finished successfully
+2023-06-14 22:10:34 - log - INFO - SUCCESS: feauture engineering has started
+2023-06-14 22:10:34 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:10:34 - log - INFO - SUCCESS: data test was loaded successfully
+2023-06-14 22:10:34 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:10:37 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:10:37 - log - INFO - SUCCESS: data was transformed
+2023-06-14 22:10:38 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:10:38 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:10:39 - log - INFO - SUCCESS: The training of the linear regression model has started
+2023-06-14 22:10:39 - log - INFO - SUCCESS: data was loaded successfully
+2023-06-14 22:10:39 - log - INFO - The data was divided in test and train sets
+2023-06-14 22:10:39 - log - INFO - The model was trained
+2023-06-14 22:10:39 - log - INFO - The train metrics of the model are: RMSE: 1169.3505464496527-R2:0.5284213437179959
+2023-06-14 22:10:39 - log - INFO - The test metrics of the model are: RMSE: 1146.6648971839618-R2:0.552593049589098
+2023-06-14 22:10:39 - log - INFO - SUCCESS: The model has been saved successfully
+2023-06-14 22:10:39 - log - INFO - SUCCESS: train.py finished successfully
+2023-06-14 22:10:40 - log - INFO - SUCCESS: feauture engineering inference has started
+2023-06-14 22:10:40 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:10:40 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:10:40 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:10:40 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:10:40 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:10:41 - log - INFO - prediction proccess has started
+2023-06-14 22:10:41 - log - INFO - the data was loaded successfully
+2023-06-14 22:10:41 - log - INFO - the model.pkl has been loaded successfully
+2023-06-14 22:10:42 - log - INFO - prediction made successfully
+2023-06-14 22:10:42 - log - INFO - prediction was saved successfully
+2023-06-14 22:10:42 - log - INFO - SUCCESS: predict.py finished successfully
+2023-06-14 22:15:24 - log - INFO - SUCCESS: feauture engineering has started
+2023-06-14 22:15:24 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:15:24 - log - INFO - SUCCESS: data test was loaded successfully
+2023-06-14 22:15:24 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:15:28 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:15:28 - log - INFO - SUCCESS: data was transformed
+2023-06-14 22:15:28 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:15:28 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:15:29 - log - INFO - SUCCESS: The training of the linear regression model has started
+2023-06-14 22:15:29 - log - INFO - SUCCESS: data was loaded successfully
+2023-06-14 22:15:29 - log - INFO - The data was divided in test and train sets
+2023-06-14 22:15:29 - log - INFO - The model was trained
+2023-06-14 22:15:29 - log - INFO - The train metrics of the model are: RMSE: 1169.3505464496527-R2:0.5284213437179959
+2023-06-14 22:15:29 - log - INFO - The test metrics of the model are: RMSE: 1146.6648971839618-R2:0.552593049589098
+2023-06-14 22:15:29 - log - ERROR - An error occurred while saving the model:[Errno 2] No such file or directory: './src/models/model_linearRegression.pkl'
+2023-06-14 22:15:30 - log - INFO - SUCCESS: train.py finished successfully
+2023-06-14 22:15:30 - log - INFO - SUCCESS: feauture engineering inference has started
+2023-06-14 22:15:30 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:15:30 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:15:30 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:15:30 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:15:30 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:15:32 - log - INFO - prediction proccess has started
+2023-06-14 22:15:32 - log - INFO - the data was loaded successfully
+2023-06-14 22:15:32 - log - INFO - the model.pkl has been loaded successfully
+2023-06-14 22:15:32 - log - INFO - prediction made successfully
+2023-06-14 22:15:32 - log - INFO - prediction was saved successfully
+2023-06-14 22:15:32 - log - INFO - SUCCESS: predict.py finished successfully
+2023-06-14 22:16:52 - log - INFO - SUCCESS: feauture engineering has started
+2023-06-14 22:16:52 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:16:52 - log - INFO - SUCCESS: data test was loaded successfully
+2023-06-14 22:16:52 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:16:55 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:16:55 - log - INFO - SUCCESS: data was transformed
+2023-06-14 22:16:55 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:16:55 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:16:57 - log - INFO - SUCCESS: The training of the linear regression model has started
+2023-06-14 22:16:57 - log - INFO - SUCCESS: data was loaded successfully
+2023-06-14 22:16:57 - log - INFO - The data was divided in test and train sets
+2023-06-14 22:16:57 - log - INFO - The model was trained
+2023-06-14 22:16:57 - log - INFO - The train metrics of the model are: RMSE: 1169.3505464496527-R2:0.5284213437179959
+2023-06-14 22:16:57 - log - INFO - The test metrics of the model are: RMSE: 1146.6648971839618-R2:0.552593049589098
+2023-06-14 22:16:57 - log - INFO - SUCCESS: The model has been saved successfully
+2023-06-14 22:16:57 - log - INFO - SUCCESS: train.py finished successfully
+2023-06-14 22:16:58 - log - INFO - SUCCESS: feauture engineering inference has started
+2023-06-14 22:16:58 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:16:58 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:16:58 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:16:58 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:16:58 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:16:59 - log - INFO - prediction proccess has started
+2023-06-14 22:16:59 - log - INFO - the data was loaded successfully
+2023-06-14 22:16:59 - log - INFO - the model.pkl has been loaded successfully
+2023-06-14 22:16:59 - log - INFO - prediction made successfully
+2023-06-14 22:16:59 - log - INFO - prediction was saved successfully
+2023-06-14 22:17:00 - log - INFO - SUCCESS: predict.py finished successfully
+2023-06-14 22:23:06 - log - INFO - SUCCESS: feauture engineering has started
+2023-06-14 22:23:06 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:23:06 - log - INFO - SUCCESS: data test was loaded successfully
+2023-06-14 22:23:06 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:23:09 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:23:09 - log - INFO - SUCCESS: data was transformed
+2023-06-14 22:23:09 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:23:09 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:23:11 - log - INFO - SUCCESS: The training of the linear regression model has started
+2023-06-14 22:23:11 - log - INFO - SUCCESS: data was loaded successfully
+2023-06-14 22:23:11 - log - INFO - The data was divided in test and train sets
+2023-06-14 22:23:11 - log - INFO - The model was trained
+2023-06-14 22:23:11 - log - INFO - The train metrics of the model are: RMSE: 1169.3505464496527-R2:0.5284213437179959
+2023-06-14 22:23:11 - log - INFO - The test metrics of the model are: RMSE: 1146.6648971839618-R2:0.552593049589098
+2023-06-14 22:23:11 - log - INFO - SUCCESS: The model has been saved successfully
+2023-06-14 22:23:11 - log - INFO - SUCCESS: train.py finished successfully
+2023-06-14 22:23:12 - log - INFO - SUCCESS: feauture engineering inference has started
+2023-06-14 22:23:12 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-14 22:23:12 - log - INFO - SUCCESS: data was cleaning
+2023-06-14 22:23:12 - log - INFO - SUCCESS: data missing was restored
+2023-06-14 22:23:12 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-14 22:23:12 - log - INFO - SUCCESS: feature_engineering.py finished successfully
+2023-06-14 22:23:13 - log - INFO - prediction proccess has started
+2023-06-14 22:23:13 - log - INFO - the data was loaded successfully
+2023-06-14 22:23:13 - log - INFO - SUCCESS: predict.py finished successfully

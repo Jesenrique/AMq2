@@ -93,7 +93,7 @@ if __name__ == "__main__":
     
     #spark = Spark()
     
-    pipeline = MakePredictionPipeline(input_path = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\Notebook\\test_final.csv',
-                                      output_path = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\src\\predictions\predictions.csv',
-                                      model_path = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\src\\models\\model.pkl')
+    pipeline = MakePredictionPipeline(input_path = './preprocessed_data_2.csv',
+                                      output_path = '../src/predictions/predictions.csv',
+                                      model_path = '../src/models/model_linearRegression.pkl')
     pipeline.run()  

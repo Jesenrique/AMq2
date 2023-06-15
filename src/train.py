@@ -141,5 +141,5 @@ class ModelTrainingPipeline(object):
 
 if __name__ == "__main__":
 
-    ModelTrainingPipeline(input_path = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\data\\preprocessed_data.csv',
-                          model_path = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\src\\models\\model_linearRegression.pkl').run()
+    ModelTrainingPipeline(input_path = './preprocessed_data.csv',
+                          model_path = '../src/models/model_linearRegression.pkl').run()

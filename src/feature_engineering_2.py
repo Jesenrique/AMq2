@@ -124,5 +124,5 @@ class FeatureEngineeringPipeline(object):
 
   
 if __name__ == "__main__":
-    FeatureEngineeringPipeline(path_json="C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\Notebook\\example.json",
-                                output_path = 'C:\\Users\\Jesus\\Documents\\CEIA\\Aprendizaje de máquina 2\\Material de clase\\TP\\TP-AMq2\\data\\preprocessed_data_2.csv').run()
+    FeatureEngineeringPipeline(path_json="../Notebook/example.json",
+                                output_path = './preprocessed_data_2.csv').run()
