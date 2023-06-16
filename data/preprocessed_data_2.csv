@@ -1,2 +1,2 @@
-Item_Identifier,Item_Weight,Item_Visibility,Item_MRP,Outlet_Identifier,Outlet_Establishment_Year,Outlet_Size,Outlet_Location_Type,Outlet_Type_Supermarket Type1
-FDW58,20.75,0.007564836,,OUT049,21,1,2,1
+Item_Weight,Item_Visibility,Item_MRP,Outlet_Establishment_Year,Outlet_Size,Outlet_Location_Type,Outlet_Type_Supermarket Type1
+20.75,0.007564836,,21,1,2,1

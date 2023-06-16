@@ -28,13 +28,13 @@ class ModelTrainingPipeline(object):
 
     def read_data(self) -> pd.DataFrame:
         """
-        COMPLETAR DOCSTRING 
-        
-        :return pandas_df: The desired DataLake table as a DataFrame
-        :rtype: pd.DataFrame
+        Reads data from a CSV file and returns a pandas DataFrame object.
+
+        Returns:
+            pandas.DataFrame: The DataFrame object that contains the data from the CSV file.
+        Raises:
+            Exception: If any error occurs while reading the CSV file.
         """
-            
-        # COMPLETAR CON CÓDIGO
         try:
             pandas_df=pd.read_csv(self.input_path)
             logger.info("SUCCESS: data was loaded successfully")
@@ -46,15 +46,17 @@ class ModelTrainingPipeline(object):
     
     def model_training(self, df: pd.DataFrame) -> pd.DataFrame:
         """
-        COMPLETAR DOCSTRING
-        
+        Trains a linear regression model using the provided DataFrame.
+
+        Args:
+            df (pandas.DataFrame): The DataFrame containing the data to train the model.
+        Returns:
+            model: the trained model.
         """
-        # Eliminación de variables que no contribuyen a la predicción por ser muy específicas
-        dataset = df.drop(columns=['Item_Identifier', 'Outlet_Identifier'])
 
         # División del dataset de train y test
-        df_train = dataset.loc[dataset['Set'] == 'train']
-        df_test = dataset.loc[dataset['Set'] == 'test']
+        df_train = df.loc[df['Set'] == 'train']
+        df_test = df.loc[df['Set'] == 'test']
 
         # Eliminando columnas sin datos
         df_train.drop(['Set'], axis=1, inplace=True)
@@ -83,32 +85,27 @@ class ModelTrainingPipeline(object):
         # Cálculo de los errores cuadráticos medios y Coeficiente de Determinación (R^2)
         mse_train = metrics.mean_squared_error(y_train, model.predict(x_train))
         R2_train = model.score(x_train, y_train)
-        print('Métricas del Modelo:')
-        print('ENTRENAMIENTO: RMSE: {:.2f} - R2: {:.4f}'.format(mse_train**0.5, R2_train))
-        logger.info(f"The train metrics of the model are: RMSE: {mse_train**0.5}"
-                     f"-R2:{R2_train}")
+        #print('Métricas del Modelo:')
+        #print('ENTRENAMIENTO: RMSE: {:.2f} - R2: {:.4f}'.format(mse_train**0.5, R2_train))
+        logger.info(f"The train metrics of the model are: RMSE: {round(mse_train**0.5)}"
+                     f"-R2:{round(R2_train)}")
 
         mse_val = metrics.mean_squared_error(y_val, pred)
         R2_val = model.score(x_val, y_val)
-        print('VALIDACIÓN: RMSE: {:.2f} - R2: {:.4f}'.format(mse_val**0.5, R2_val))
-        logger.info(f"The test metrics of the model are: RMSE: {mse_val**0.5}"
-                     f"-R2:{R2_val}")
-        #print('\nCoeficientes del Modelo:')
-        # Constante del modelo
-        #print('Intersección: {:.2f}'.format(model.intercept_))
+        #print('VALIDACIÓN: RMSE: {:.2f} - R2: {:.4f}'.format(mse_val**0.5, R2_val))
+        logger.info(f"The test metrics of the model are: RMSE: {round(mse_val**0.5)}"
+                     f"-R2:{round(R2_val)}")
 
-        # Coeficientes del modelo
-        #coef = pd.DataFrame(x_train.columns, columns=['features'])
-        #coef['Coeficiente Estimados'] = model.coef_
-        #print(coef, '\n')
-        #coef.sort_values(by='Coeficiente Estimados').set_index('features').plot(kind='bar', title='Importancia de las variables', figsize=(12, 6))
+        return model
 
-        return model, x_val, y_val
-
-    def model_dump(self, model_trained,x_vali,y_vali) -> None:
+    def model_dump(self, model_trained) -> None:
         """
-        COMPLETAR DOCSTRING
+        Saves the trained model to disk using pickle.
         
+        Args:
+            model_trained: The trained model to be saved.
+        Raises:
+            IOError: If there is an error writing the file to disk.
         """
         try:
             with open(self.model_path, 'wb') as file:
@@ -116,21 +113,7 @@ class ModelTrainingPipeline(object):
             logger.info("SUCCESS: The model has been saved successfully")
         except Exception as e:
             logger.error(f"An error occurred while saving the model:{e}")
-        '''
-        try: 
-            with open(self.model_path, 'rb') as file:  
-                model = pickle.load(file)
-            print("El modelo serializado ha sido cargado de manera exitosa!")
-        except:
-            print("Error al momento de cargar el modelo serializado!")
-
-        # Predicción del modelo ajustado para el conjunto de validación
-        print(x_vali.info())
-        pred=model.predict(x_vali)
-        mse_val = metrics.mean_squared_error(y_vali, pred)
-        R2_val = model.score(x_vali, y_vali)
-        print('VALIDACIÓN: RMSE: {:.2f} - R2: {:.4f}'.format(mse_val**0.5, R2_val))
-        '''
+   
         return None
 
     def run(self):

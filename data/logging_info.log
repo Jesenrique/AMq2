@@ -274,3 +274,85 @@
 2023-06-14 22:23:13 - log - INFO - prediction proccess has started
 2023-06-14 22:23:13 - log - INFO - the data was loaded successfully
 2023-06-14 22:23:13 - log - INFO - SUCCESS: predict.py finished successfully
+2023-06-15 23:05:44 - log - INFO - SUCCESS: feauture engineering inference has started
+2023-06-15 23:05:44 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-15 23:05:44 - log - INFO - SUCCESS: data was cleaning
+2023-06-15 23:05:44 - log - INFO - SUCCESS: data missing was restored
+2023-06-15 23:05:44 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-15 23:05:48 - log - INFO - prediction proccess has started
+2023-06-15 23:05:48 - log - INFO - the data was loaded successfully
+2023-06-15 23:07:26 - log - INFO - SUCCESS: feauture engineering inference has started
+2023-06-15 23:07:26 - log - INFO - SUCCESS: data train was loaded successfully
+2023-06-15 23:07:26 - log - INFO - SUCCESS: data was cleaning
+2023-06-15 23:07:26 - log - INFO - SUCCESS: data missing was restored
+2023-06-15 23:07:26 - log - INFO - SUCCESS: preprocessed data was saved successfully
+2023-06-15 23:07:28 - log - INFO - prediction proccess has started
+2023-06-15 23:07:28 - log - INFO - the data was loaded successfully
+2023-06-15 23:07:28 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:07:28 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names seen at fit time, yet now missing:
+- Outlet_Type_Grocery Store
+- Outlet_Type_Supermarket Type2
+- Outlet_Type_Supermarket Type3
+
+2023-06-15 23:13:17 - log - INFO - prediction proccess has started
+2023-06-15 23:13:18 - log - INFO - the data was loaded successfully
+2023-06-15 23:13:18 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:13:18 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names seen at fit time, yet now missing:
+- Outlet_Type_Grocery Store
+- Outlet_Type_Supermarket Type2
+- Outlet_Type_Supermarket Type3
+
+2023-06-15 23:15:14 - log - INFO - prediction proccess has started
+2023-06-15 23:15:14 - log - INFO - the data was loaded successfully
+2023-06-15 23:15:14 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:15:14 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names seen at fit time, yet now missing:
+- Outlet_Type_Grocery Store
+- Outlet_Type_Supermarket Type2
+- Outlet_Type_Supermarket Type3
+
+2023-06-15 23:18:06 - log - INFO - prediction proccess has started
+2023-06-15 23:18:06 - log - INFO - the data was loaded successfully
+2023-06-15 23:18:06 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:18:06 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+
+2023-06-15 23:21:02 - log - INFO - prediction proccess has started
+2023-06-15 23:21:02 - log - INFO - the data was loaded successfully
+2023-06-15 23:21:02 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:21:02 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Item_Outlet_Sales
+- Unnamed: 0
+
+2023-06-15 23:22:57 - log - INFO - prediction proccess has started
+2023-06-15 23:22:57 - log - INFO - the data was loaded successfully
+2023-06-15 23:22:57 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:22:57 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+
+2023-06-15 23:24:18 - log - INFO - prediction proccess has started
+2023-06-15 23:24:18 - log - INFO - the data was loaded successfully
+2023-06-15 23:24:18 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:24:18 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+
+2023-06-15 23:24:35 - log - INFO - prediction proccess has started
+2023-06-15 23:24:35 - log - INFO - the data was loaded successfully
+2023-06-15 23:24:35 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:24:35 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+
+2023-06-15 23:26:07 - log - INFO - prediction proccess has started
+2023-06-15 23:26:07 - log - INFO - the data was loaded successfully
+2023-06-15 23:26:07 - log - INFO - the model.pkl has been loaded successfully
+2023-06-15 23:26:07 - log - ERROR - Error in prediction: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+

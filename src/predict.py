@@ -4,8 +4,8 @@ predict.py
 COMPLETAR DOCSTRING
 
 DESCRIPCIÓN:
-AUTOR:
-FECHA:
+AUTOR: Jesús García
+FECHA: 12-06-2023
 """
 
 # Imports
@@ -27,7 +27,12 @@ class MakePredictionPipeline(object):
                 
     def load_data(self):
         """
-        COMPLETAR DOCSTRING
+        Loads a CSV file into a pandas DataFrame.
+
+        Returns:
+            pandas.DataFrame: The DataFrame containing the data from the CSV file.
+        Raises:
+            IOError: If the CSV file cannot be loaded.
         """
         try:
             data=pd.read_csv(self.input_path)
@@ -35,15 +40,17 @@ class MakePredictionPipeline(object):
         except Exception as e:
             logger.error(f"the data can't be loaded: {e}")
 
-        data=data.drop("Unnamed: 0",axis=1)
+        #data=data.drop("Unnamed: 0",axis=1)
         #print(data.info())
         return data
 
     def load_model(self) -> None:
         """
-        COMPLETAR DOCSTRING
+        Loads a trained model from a pickle file.
+
+        Raises:
+            IOError: If the model file cannot be loaded.
         """
-        # Carga el modelo desde el .pkl
         try: 
             with open(self.model_path, 'rb') as file:  
                 self.model = pickle.load(file)
@@ -56,20 +63,32 @@ class MakePredictionPipeline(object):
 
     def make_predictions(self, data: pd.DataFrame) -> pd.DataFrame:
         """
-        COMPLETAR DOCSTRING
+        Uses a trained model to make predictions on new data.
+
+        Args:
+            data (pandas.DataFrame): The DataFrame containing the new data to make predictions on.
+        Returns:
+            pandas.DataFrame: The DataFrame containing the predictions.
+        Raises:
+            ValueError: If the input DataFrame does not contain the necessary columns.
         """
         try:
             new_data=self.model.predict(data)
-            logger.info("prediction made successfully")
+            #logger.info("prediction made successfully")
         except Exception as e:
             logger.error(f"Error in prediction: {e}")
-
+        
         return new_data
 
 
     def write_predictions(self, predicted_data: pd.DataFrame) -> None:
         """
-        COMPLETAR DOCSTRING
+        Saves the predicted data to a CSV file.
+
+        Args:
+            predicted_data (pandas.DataFrame): The DataFrame containing the predicted data.
+        Raises:
+            IOError: If there is an error writing the file to disk.
         """
         # Guardar el DataFrame en un archivo de Excel en una ubicación específica
         predicted_data=pd.DataFrame(predicted_data)
@@ -93,7 +112,7 @@ if __name__ == "__main__":
     
     #spark = Spark()
     
-    pipeline = MakePredictionPipeline(input_path = './preprocessed_data_2.csv',
+    pipeline = MakePredictionPipeline(input_path = '../Notebook/test_final.csv',
                                       output_path = '../src/predictions/predictions.csv',
-                                      model_path = '../src/models/model_linearRegression.pkl')
+                                      model_path = '../src/models/model.pkl')
     pipeline.run()  

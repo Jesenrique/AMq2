@@ -4,8 +4,8 @@ feature_engineering.py
 COMPLETAR DOCSTRING
 
 DESCRIPCIÓN:
-AUTOR:
-FECHA:
+AUTOR: Jesús García 
+FECHA: 12-06-2023
 """
 
 # Imports
@@ -18,16 +18,24 @@ logger = log.logger
 class FeatureEngineeringPipeline(object):
 
     def __init__(self, input_path_test,input_path_train, output_path):
+        """
+        Initialize the FeatureEngineeringPipeline class with the input and output file paths.
+
+        Args:
+            input_path_test: Path of the test data CSV file.
+            input_path_train: Path of the training data CSV file.
+            output_path: Path of the output CSV file for the preprocessed data."
+        """
         self.input_path_test = input_path_test
         self.input_path_train = input_path_train
         self.output_path = output_path
 
     def read_data(self) -> pd.DataFrame:
         """
-        COMPLETAR DOCSTRING 
-        
-        :return pandas_df: The desired DataLake table as a DataFrame
-        :rtype: pd.DataFrame
+        Read the training and test data from the CSV files.
+
+        Returns:
+            pd.DataFrame: The desired data as a pandas DataFrame.
         """
         try:
             data_train = pd.read_csv(self.input_path_train)
@@ -51,9 +59,14 @@ class FeatureEngineeringPipeline(object):
 
     def data_imputation(self, data: pd.DataFrame) -> pd.DataFrame:
         """
-        COMPLETAR DOCSTRING
-        
+        Perform imputation of missing values in the data.
+
+        Args:
+            data (pd.DataFrame): Raw dataset.
+        Returns:
+            pd.DataFrame: Dataset with imputed missing data.
         """
+       
         #Imputación de datos por moda en la feauture item_weight
         productos = list(data[data['Item_Weight'].isnull()]['Item_Identifier'].unique())
         for producto in productos:
@@ -69,8 +82,13 @@ class FeatureEngineeringPipeline(object):
 
     def data_cleaning(self, df: pd.DataFrame) -> pd.DataFrame:
         """
-        COMPLETAR DOCSTRING
-        
+        Perform data cleaning on the DataFrame.
+
+        Args:
+            df (pd.DataFrame): Dataset without missing data.
+        Returns:
+            pd.DataFrame: Dataset with The number of years of the store and tags
+            for item_content_fat are unified
         """
         #Numero de años a la fecha
         df['Outlet_Establishment_Year'] = 2020 - df['Outlet_Establishment_Year']
@@ -82,8 +100,13 @@ class FeatureEngineeringPipeline(object):
 
     def data_transformation(self, data: pd.DataFrame) -> pd.DataFrame:
         """
-        COMPLETAR DOCSTRING
+        Perform variable transformation on the data.
         
+        Args:
+            data (pd.DataFrame): Dataset after the cleaning process.
+        Returns:
+            pd.DataFrame: The number of years of the store is obtained and tags 
+            for item_content_fat are unified.
         """
         # Asignación de nueva categoria en Item_type igual NA
         data.loc[data['Item_Type'] == 'Household', 'Item_Fat_Content'] = 'NA'
@@ -120,10 +143,15 @@ class FeatureEngineeringPipeline(object):
 
     def write_prepared_data(self, transformed_dataframe: pd.DataFrame) -> None:
         """
-        COMPLETAR DOCSTRING
-        
+        Saves the prepared DataFrame to a CSV file at a specific location.
+
+        Args:
+            transformed_dataframe (pd.DataFrame): The DataFrame containing the prepared data.
+        Returns:
+            None
+        Raises:
+            Exception: If the preprocessed data couldn't be saved to the specified location.
         """
-        # Guardar el DataFrame en un archivo de Excel en una ubicación específica
         try:
             transformed_dataframe.to_csv(self.output_path, index=False)
             logger.info("SUCCESS: preprocessed data was saved successfully")

@@ -86,6 +86,9 @@ class FeatureEngineeringPipeline(object):
         
         data['Item_MRP']=data['Item_MRP'].apply(item_value)
 
+        # Eliminación de variables que no contribuyen a la predicción por ser muy específicas
+        data = data.drop(columns=['Item_Identifier', 'Outlet_Identifier'])
+
         # Codificacción de variables ordinales y numericas
         ## Se crea copia del dataframe para valores codificados
         dataframe = data.drop(columns=['Item_Type', 'Item_Fat_Content']).copy()
