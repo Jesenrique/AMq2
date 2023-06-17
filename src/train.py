@@ -1,11 +1,12 @@
 """
 train.py
 
-COMPLETAR DOCSTRING
+DESCRIPCIÓN: El script recibe los datos previamente procesados, realiza la división
+de los datos en entrenamiento y testeo, genera un modelo regresión lineal y 
+guarda el modelo serializado.
 
-DESCRIPCIÓN:
-AUTOR:
-FECHA:
+AUTOR: Jesús García.
+FECHA: 12-06-2023
 """
 
 # Imports
@@ -53,7 +54,6 @@ class ModelTrainingPipeline(object):
         Returns:
             model: the trained model.
         """
-
         # División del dataset de train y test
         df_train = df.loc[df['Set'] == 'train']
         df_test = df.loc[df['Set'] == 'test']
@@ -63,8 +63,8 @@ class ModelTrainingPipeline(object):
         df_test.drop(['Item_Outlet_Sales','Set'], axis=1, inplace=True)
 
         # Guardando los datasets
-        df_train.to_csv("train_final.csv")
-        df_test.to_csv("test_final.csv")
+        #df_train.to_csv("train_final.csv")
+        #df_test.to_csv("test_final.csv")
 
         #Instanciamiento del modelo
         seed = 28
@@ -87,14 +87,14 @@ class ModelTrainingPipeline(object):
         R2_train = model.score(x_train, y_train)
         #print('Métricas del Modelo:')
         #print('ENTRENAMIENTO: RMSE: {:.2f} - R2: {:.4f}'.format(mse_train**0.5, R2_train))
-        logger.info(f"The train metrics of the model are: RMSE: {round(mse_train**0.5)}"
-                     f"-R2:{round(R2_train)}")
+        logger.info(f"The train metrics of the model are: RMSE: {mse_train**0.5}"
+                     f"-R2:{R2_train}")
 
         mse_val = metrics.mean_squared_error(y_val, pred)
         R2_val = model.score(x_val, y_val)
         #print('VALIDACIÓN: RMSE: {:.2f} - R2: {:.4f}'.format(mse_val**0.5, R2_val))
-        logger.info(f"The test metrics of the model are: RMSE: {round(mse_val**0.5)}"
-                     f"-R2:{round(R2_val)}")
+        logger.info(f"The test metrics of the model are: RMSE: {mse_val**0.5}"
+                     f"-R2:{R2_val}")
 
         return model
 
@@ -119,8 +119,8 @@ class ModelTrainingPipeline(object):
     def run(self):
         logger.info("SUCCESS: The training of the linear regression model has started")
         df = self.read_data()
-        model_trained,x_vali, y_vali= self.model_training(df)
-        self.model_dump(model_trained,x_vali,y_vali)
+        model_trained= self.model_training(df)
+        self.model_dump(model_trained)
 
 if __name__ == "__main__":
 

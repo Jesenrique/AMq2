@@ -1,9 +1,10 @@
 """
 feature_engineering.py
 
-COMPLETAR DOCSTRING
+DESCRIPCIÓN: Este script realiza el procesamiento de datos realizado por el data
+scientist, limpiando datos innecesarios, unificando labels, imputando datos 
+daltantes y genera un archivo .csv con el procesamiento de los datos.
 
-DESCRIPCIÓN:
 AUTOR: Jesús García 
 FECHA: 12-06-2023
 """
@@ -73,6 +74,10 @@ class FeatureEngineeringPipeline(object):
             moda = (data[data['Item_Identifier'] == producto][['Item_Weight']]).mode().iloc[0,0]
             data.loc[data['Item_Identifier'] == producto, 'Item_Weight'] = moda
         
+        result = (data[data['Item_Identifier'] == producto][['Item_Weight']]).mode()
+        if len(result) > 0: 
+            moda = result.iloc[0,0]
+
         #Imputación de datos en la feature outlet_identifier 
         outlets = list(data[data['Outlet_Size'].isnull()]['Outlet_Identifier'].unique())
         for outlet in outlets:
@@ -126,20 +131,49 @@ class FeatureEngineeringPipeline(object):
         data.loc[data['Item_Type'] == 'Non perishable', 'Item_Fat_Content'] = 'NA'
 
         # Codificación de los precios 
-        data['Item_MRP'], bins = pd.qcut(data['Item_MRP'], 4, labels = [1, 2, 3, 4],retbins=True)
+        #data['Item_MRP'], bins = pd.qcut(data['Item_MRP'], 4, labels = [1, 2, 3, 4],retbins=True)
+        # Codificación de los precios segun los rangos en el analisis de datos
+        def item_value (x):
+            if x<94.012:
+                x = 1
+            elif  94.012 < x <142.247:
+                x = 2
+            elif  142.247 < x < 185.856:
+                x = 3
+            else:
+                x = 4
+            return x
+                
+        data['Item_MRP']=data['Item_MRP'].apply(item_value)
+
 
         # Codificacción de variables ordinales y numericas
         ## Se crea copia del dataframe para valores codificados
-        dataframe = data.drop(columns=['Item_Type', 'Item_Fat_Content']).copy()
+        data = data.drop(columns=['Item_Type', 'Item_Fat_Content']).copy()
 
         ## Codificación de variables ordinales
-        dataframe['Outlet_Size'] = dataframe['Outlet_Size'].replace({'High': 2, 'Medium': 1, 'Small': 0})
-        dataframe['Outlet_Location_Type'] = dataframe['Outlet_Location_Type'].replace({'Tier 1': 2, 'Tier 2': 1, 'Tier 3': 0}) # Estas categorias se ordenaron asumiendo la categoria 2 como más lejos
+        data['Outlet_Size'] = data['Outlet_Size'].replace({'High': 2, 'Medium': 1, 'Small': 0})
+        data['Outlet_Location_Type'] = data['Outlet_Location_Type'].replace({'Tier 1': 2, 'Tier 2': 1, 'Tier 3': 0}) # Estas categorias se ordenaron asumiendo la categoria 2 como más lejos
 
-        ## Codificación de variables nominales
-        dataframe = pd.get_dummies(dataframe, columns=['Outlet_Type'])
+    
+        # Obtener lista de valores únicos
+        outlet_types = ['Grocery Store','Supermarket Type1', 'Supermarket Type2', 'Supermarket Type3']
 
-        return dataframe
+        # Crear columnas dummy 
+        for outlet in outlet_types:
+            data[outlet] = 0
+
+        # Asignar 1 a la columna correspondiente       
+        for i in range(len(data)):
+            outlet = data.loc[i, 'Outlet_Type']    
+            data.loc[i, outlet] = 1 
+
+        data=data.drop(columns='Outlet_Type')
+
+        # Eliminación de variables que no contribuyen a la predicción por ser muy específicas
+        data = data.drop(columns=['Item_Identifier', 'Outlet_Identifier'])
+        
+        return data
 
     def write_prepared_data(self, transformed_dataframe: pd.DataFrame) -> None:
         """

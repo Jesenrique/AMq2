@@ -48,20 +48,17 @@ class ModelTrainingPipeline(object):
         COMPLETAR DOCSTRING
         
         """
-        # Eliminación de variables que no contribuyen a la predicción por ser muy específicas
-        dataset = df.drop(columns=['Item_Identifier', 'Outlet_Identifier'])
-
         # División del dataset de train y test
-        df_train = dataset.loc[dataset['Set'] == 'train']
-        df_test = dataset.loc[dataset['Set'] == 'test']
+        df_train = df.loc[df['Set'] == 'train']
+        df_test = df.loc[df['Set'] == 'test']
 
         # Eliminando columnas sin datos
         df_train.drop(['Set'], axis=1, inplace=True)
         df_test.drop(['Item_Outlet_Sales','Set'], axis=1, inplace=True)
 
         # Guardando los datasets
-        df_train.to_csv("train_final.csv")
-        df_test.to_csv("test_final.csv")
+        #df_train.to_csv("train_final.csv")
+        #df_test.to_csv("test_final.csv")
 
         # División de dataset de entrenaimento y validación
         X = df_train.drop(columns='Item_Outlet_Sales') #[['Item_Weight', 'Item_MRP', 'Outlet_Establishment_Year', 'Outlet_Size', 'Outlet_Location_Type']] # .drop(columns='Item_Outlet_Sales')
@@ -71,7 +68,7 @@ class ModelTrainingPipeline(object):
         sampler = optuna.samplers.TPESampler(seed=42)
         study = optuna.create_study(direction='maximize', sampler=sampler)
         logger.info("Model optimization has started")
-        study.optimize(self.objective, n_trials=10)
+        study.optimize(self.objective, n_trials=50)
         # Imprimir los resultados de la optimización
         print('Best trial: score {}, params {}'.format(study.best_trial.value, study.best_trial.params))
         logger.info(f"The best parametres are: {study.best_params}")

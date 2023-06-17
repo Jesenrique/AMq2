@@ -9,6 +9,7 @@ try:
 except Exception as e:
     print("SUCCESS: feature_engineering.py finished successfully")
 
+
 #Ejecuta el pipeline de inferencia
 try:
     path='../src/inference_pipeline.py'
@@ -16,6 +17,4 @@ try:
     #logger.info("SUCCESS: feature_engineering.py finished successfully")
 except Exception as e:
     print("SUCCESS: feature_engineering.py finished successfully")
-
-
 
